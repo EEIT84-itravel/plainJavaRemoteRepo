@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.sql.Time;
 import java.sql.Timestamp;
 
-import _00_Misc.CodeVO;
+import _00_Misc.model.CodeVO;
 
 public class SightVO implements Serializable {
 
