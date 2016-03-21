@@ -30,5 +30,4 @@ public class TransVO implements Serializable {
 		return "TransVO [transId=" + transId + ", transFormId=" + transFormId
 				+ "]";
 	}
-
 }

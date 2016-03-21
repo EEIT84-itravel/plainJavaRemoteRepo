@@ -3,7 +3,6 @@ package _01_Sight.model;
 import java.io.Serializable;
 import java.sql.Time;
 import java.sql.Timestamp;
-
 import _00_Misc.model.CodeVO;
 
 public class SightVO implements Serializable {
@@ -171,9 +170,5 @@ public class SightVO implements Serializable {
 	public void setDel(boolean del) {
 		this.del = del;
 	}
-	
-	
-	
-	
 	
 }
