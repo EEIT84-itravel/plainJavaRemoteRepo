@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016/3/21 ?U?? 02:40:07 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="_01_Sight.model.SightVO" table="SIGHTVO0">
+        <id name="sightId" type="java.lang.Integer">
+            <column name="SIGHTID" />
+            <generator class="assigned" />
+        </id>
+        <property name="sightName" type="java.lang.String">
+            <column name="SIGHTNAME" />
+        </property>
+        <property name="regionId" type="java.lang.String">
+            <column name="REGIONID" />
+        </property>
+        <property name="countyId" type="java.lang.String">
+            <column name="COUNTYID" />
+        </property>
+        <property name="sightTypeId" type="java.lang.String">
+            <column name="SIGHTTYPEID" />
+        </property>
+        <property name="ticket" type="java.lang.String">
+            <column name="TICKET" />
+        </property>
+        <property name="openTime" type="java.sql.Time">
+            <column name="OPENTIME" />
+        </property>
+        <property name="closeIime" type="java.sql.Time">
+            <column name="CLOSEIIME" />
+        </property>
+        <property name="spendHour" type="java.sql.Time">
+            <column name="SPENDHOUR" />
+        </property>
+        <property name="layPeriod" type="java.lang.String">
+            <column name="LAYPERIOD" />
+        </property>
+        <property name="score" type="java.lang.Float">
+            <column name="SCORE" />
+        </property>
+        <property name="longitude" type="java.lang.Float">
+            <column name="LONGITUDE" />
+        </property>
+        <property name="latitude" type="java.lang.Float">
+            <column name="LATITUDE" />
+        </property>
+        <property name="watchNum" type="java.lang.Integer">
+            <column name="WATCHNUM" />
+        </property>
+        <property name="collectNum" type="java.lang.Integer">
+            <column name="COLLECTNUM" />
+        </property>
+        <property name="phone" type="java.lang.String">
+            <column name="PHONE" />
+        </property>
+        <property name="addr" type="java.lang.String">
+            <column name="ADDR" />
+        </property>
+        <property name="trans" type="java.lang.String">
+            <column name="TRANS" />
+        </property>
+        <property name="creator" type="java.lang.Integer">
+            <column name="CREATOR" />
+        </property>
+        <property name="createTime" type="java.sql.Timestamp">
+            <column name="CREATETIME" />
+        </property>
+        <property name="modifier" type="java.lang.Integer">
+            <column name="MODIFIER" />
+        </property>
+        <property name="modifyTime" type="java.sql.Timestamp">
+            <column name="MODIFYTIME" />
+        </property>
+        <property name="del" type="boolean">
+            <column name="DEL" />
+        </property>
+    </class>
+</hibernate-mapping>
