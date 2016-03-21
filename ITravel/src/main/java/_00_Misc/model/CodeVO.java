@@ -1,4 +1,4 @@
-package _00_Misc;
+package _00_Misc.model;
 
 import java.io.Serializable;
 
