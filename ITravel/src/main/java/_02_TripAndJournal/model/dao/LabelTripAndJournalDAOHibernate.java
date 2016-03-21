@@ -41,9 +41,9 @@ public class LabelTripAndJournalDAOHibernate {
 
 	public LabelTripAndJournalVO insert(
 			LabelTripAndJournalVO labelTripAndJournalVO) {
-		Session session = null;
+		Session session = HibernateUtil_H4_Ver1.getSessionFactory()
+				.getCurrentSession();
 		try {
-			session = HibernateUtil_H4_Ver1.getSessionFactory().openSession();
 			session.beginTransaction();
 			session.save(labelTripAndJournalVO);
 			session.getTransaction().commit();
@@ -61,7 +61,6 @@ public class LabelTripAndJournalDAOHibernate {
 		Session session = HibernateUtil_H4_Ver1.getSessionFactory()
 				.getCurrentSession();
 		try {
-			session = HibernateUtil_H4_Ver1.getSessionFactory().openSession();
 			session.beginTransaction();
 			LabelTripAndJournalVO labelTripAndJournalVO = (LabelTripAndJournalVO) session
 					.get(LabelTripAndJournalVO.class, labelDetailId);

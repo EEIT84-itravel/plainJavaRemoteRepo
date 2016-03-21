@@ -38,9 +38,9 @@ public class TransDAOHibernate {
 	}
 
 	public TransVO insert(TransVO transVO) {
-		Session session = null;
+		Session session =HibernateUtil_H4_Ver1.getSessionFactory()
+				.getCurrentSession();
 		try {
-			session = HibernateUtil_H4_Ver1.getSessionFactory().openSession();
 			session.beginTransaction();
 			session.save(transVO);
 			session.getTransaction().commit();
@@ -57,7 +57,6 @@ public class TransDAOHibernate {
 		Session session = HibernateUtil_H4_Ver1.getSessionFactory()
 				.getCurrentSession();
 		try {
-			session = HibernateUtil_H4_Ver1.getSessionFactory().openSession();
 			session.beginTransaction();
 			TransVO transVO = (TransVO) session.get(TransVO.class, transId);
 			if (transVO != null) {

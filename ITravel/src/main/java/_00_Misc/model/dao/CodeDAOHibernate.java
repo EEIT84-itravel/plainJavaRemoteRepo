@@ -37,9 +37,8 @@ public class CodeDAOHibernate {
 	}
 
 	public CodeVO insert(CodeVO codeVO) {
-		Session session = null;
+		Session session = HibernateUtil_H4_Ver1.getSessionFactory().getCurrentSession();
 		try {
-			session = HibernateUtil_H4_Ver1.getSessionFactory().openSession();
 			session.beginTransaction();
 			session.save(codeVO);
 			session.getTransaction().commit();
@@ -56,7 +55,6 @@ public class CodeDAOHibernate {
 		Session session = HibernateUtil_H4_Ver1.getSessionFactory()
 				.getCurrentSession();
 		try {
-			session = HibernateUtil_H4_Ver1.getSessionFactory().openSession();
 			session.beginTransaction();
 			CodeVO codeVO = (CodeVO) session.get(CodeVO.class, codeId);
 			codeVO.setCodeName(codeName);

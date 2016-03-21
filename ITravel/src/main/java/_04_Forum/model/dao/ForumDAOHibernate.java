@@ -43,13 +43,13 @@ public class ForumDAOHibernate {
 		// System.out.println(forumVO);
 
 		// delete
-		// System.out.println(dao.delete(6));
+		System.out.println(dao.delete(6));
 	}
 
 	public ForumVO insert(ForumVO forumVO) {
-		Session session = null;
+		Session session = HibernateUtil_H4_Ver1.getSessionFactory()
+				.getCurrentSession();
 		try {
-			session = HibernateUtil_H4_Ver1.getSessionFactory().openSession();
 			session.beginTransaction();
 			session.save(forumVO);
 			session.getTransaction().commit();
@@ -68,7 +68,6 @@ public class ForumDAOHibernate {
 		Session session = HibernateUtil_H4_Ver1.getSessionFactory()
 				.getCurrentSession();
 		try {
-			session = HibernateUtil_H4_Ver1.getSessionFactory().openSession();
 			session.beginTransaction();
 			ForumVO forumVO = (ForumVO) session.get(ForumVO.class, forumId);
 			if (forumVO != null) {
