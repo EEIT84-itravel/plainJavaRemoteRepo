@@ -34,4 +34,5 @@
 		<mapping resource="_02_TripAndJournal/model/TransVO.hbm.xml" />
 		<mapping resource="_04_Forum/model/ForumVO.hbm.xml" />
 	</session-factory>
+
 </hibernate-configuration>
