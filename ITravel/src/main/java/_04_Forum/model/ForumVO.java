@@ -3,6 +3,7 @@ package _04_Forum.model;
 import java.io.Serializable;
 
 public class ForumVO implements Serializable {
+
 	private static final long serialVersionUID = 1L;
 	// 編號(forum_id)
 	private Integer forumId;

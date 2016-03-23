@@ -1,12 +1,11 @@
-package _00_Misc.model;
+package _00_Misc;
 
 import java.io.Serializable;
 
 public class CodeVO implements Serializable {
 	private static final long serialVersionUID = 1L;
-	//代碼編號
+	
 	private String codeId;
-	//代碼內容
 	private String codeName;
 
 	public String getCodeId() {

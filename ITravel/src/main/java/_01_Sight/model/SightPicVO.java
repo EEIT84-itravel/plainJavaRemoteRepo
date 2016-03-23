@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Arrays;
 
 public class SightPicVO implements Serializable {
+
 	private static final long serialVersionUID = 1L;
 	
 	private Integer sightPicId;  //景點圖片編號
@@ -41,7 +42,4 @@ public class SightPicVO implements Serializable {
 	public void setPic(byte[] pic) {
 		this.pic = pic;
 	}
-	
-	
-	
 }
