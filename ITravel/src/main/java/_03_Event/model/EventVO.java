@@ -1,10 +1,11 @@
-package model;
+package _03_Event.model;
 
 import java.io.Serializable;
 import java.sql.Blob;
 import java.util.Arrays;
 
 public class EventVO implements Serializable{  //活動
+	
 	private Integer eventId; //活動編號
 	private byte[] eventPhoto; //活動照片(不確定型態)
     private String eventTopic; //活動主題
