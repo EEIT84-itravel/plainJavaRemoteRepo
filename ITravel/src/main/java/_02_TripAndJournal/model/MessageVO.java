@@ -9,7 +9,7 @@ public class MessageVO implements Serializable { //留言
     private Integer memberId; //會員編號
     private String  content; //內容
     private Integer referenceNo; //參照編號
-    private java.sql.Date updateTime; //留言時間
+    private java.sql.Timestamp updateTime; //留言時間
     
 	@Override
 	public String toString() {
@@ -48,12 +48,13 @@ public class MessageVO implements Serializable { //留言
 	public void setReferenceNo(Integer referenceNo) {
 		this.referenceNo = referenceNo;
 	}
-	public java.sql.Date getUpdateTime() {
+	public java.sql.Timestamp getUpdateTime() {
 		return updateTime;
 	}
-	public void setUpdateTime(java.sql.Date updateTime) {
+	public void setUpdateTime(java.sql.Timestamp updateTime) {
 		this.updateTime = updateTime;
 	}
+
     
 	
 }
