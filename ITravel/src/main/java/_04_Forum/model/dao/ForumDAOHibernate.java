@@ -20,10 +20,10 @@ public class ForumDAOHibernate {
 		// System.out.println(res);
 
 		// selectAll
-		// List<ForumVO> codes = dao.select();
-		// for (ForumVO detail : codes) {
-		// System.out.println(detail);
-		// }
+		 List<ForumVO> codes = dao.select();
+		 for (ForumVO detail : codes) {
+		 System.out.println(detail);
+		 }
 
 		// update
 		// java.sql.Timestamp timestamp = new Timestamp( new Date().getTime());

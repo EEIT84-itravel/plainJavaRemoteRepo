@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2016/3/18 ?U?? 08:05:02 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-    <class name="model.JournalPhotoVO" table="journal_photo">
+    <class name="_02_TripAndJournal.model.JournalPhotoVO" table="journal_photo">
     
         <id name="journalPhotoId" column="journal_photo_id" >
             <generator class="identity" />

@@ -19,13 +19,13 @@ public class SightDAOHibernate {
 		System.out.println("findByPrimaryKey測試: " + sightVO);
 
 		// sightVO.setDel(true);
-		sightVO.setDel(false);
-		java.util.Date now = new Date();
-		long nowLong = now.getTime();
-		java.sql.Timestamp sqlDate = new Timestamp(nowLong);
-		sightVO.setModifyTime(sqlDate);
-		SightVO sightVOupdate = dao.update(sightVO);
-		System.out.println("update測試: " + sightVOupdate);
+//		sightVO.setDel(false);
+//		java.util.Date now = new Date();
+//		long nowLong = now.getTime();
+//		java.sql.Timestamp sqlDate = new Timestamp(nowLong);
+//		sightVO.setModifyTime(sqlDate);
+//		SightVO sightVOupdate = dao.update(sightVO);
+//		System.out.println("update測試: " + sightVOupdate);
 
 //		SightVO sightVO2 = new SightVO();
 //		sightVO2.setSightName("testsight");

@@ -35,6 +35,13 @@
 		<mapping resource="_02_TripAndJournal/model/ReportVO.hbm.xml" />
 		<mapping resource="_02_TripAndJournal/model/LabelTripAndJournalVO.hbm.xml" />
 		<mapping resource="_02_TripAndJournal/model/TransVO.hbm.xml" />
+		<mapping resource="_02_TripAndJournal/model/JournalDetailVO.hbm.xml" />
+		<mapping resource="_02_TripAndJournal/model/JournalPhotoVO.hbm.xml" />
+		<mapping resource="_02_TripAndJournal/model/JournalVO.hbm.xml" />
+		<mapping resource="_02_TripAndJournal/model/TripVO.hbm.xml" />
+		<mapping resource="_02_TripAndJournal/model/TripDetailVO.hbm.xml" />
+		<mapping resource="_02_TripAndJournal/model/TripCompanionVO.hbm.xml" />
+		<mapping resource="_03_Event/model/EventVO.hbm.xml" />
 		<mapping resource="_04_Forum/model/ForumVO.hbm.xml" />
 
 	</session-factory>

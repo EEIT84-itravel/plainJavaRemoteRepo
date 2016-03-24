@@ -11,9 +11,9 @@ import _02_TripAndJournal.model.TripVO;
 public class TripDAOHibernate {
 
 	public static void main(String[] args) {
-		// TripDAOHibernate dao = new TripDAOHibernate();//Select
-		// TripVO bean = dao.select(5);
-		// System.out.println(bean);
+		 TripDAOHibernate dao = new TripDAOHibernate();//Select
+		 TripVO bean = dao.select(5);
+		 System.out.println(bean);
 
 		// TripDAOHibernate dao = new TripDAOHibernate();
 		// TripVO bean = new TripVO();
