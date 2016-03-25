@@ -8,7 +8,7 @@
 			<column name="friend_no" />
 			<generator class="identity" />
 		</id>
-		<property name="firendId" type="java.lang.Integer">
+		<property name="friendId" type="java.lang.Integer">
 			<column name="friend_id" />
 		</property>
 		<property name="memberId" type="java.lang.Integer">

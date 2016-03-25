@@ -124,7 +124,7 @@ public class MemberDAOHibernate implements Member_interface {
 		// System.out.println(res);
 
 		// delete
-		 dao.delete(6);
+		 //dao.delete(6);
 
 	}
 

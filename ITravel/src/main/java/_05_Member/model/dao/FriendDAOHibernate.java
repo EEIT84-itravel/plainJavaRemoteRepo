@@ -61,7 +61,7 @@ public class FriendDAOHibernate implements Friend_interface {
 			FriendVO friendVO = new FriendVO();
 			friendVO.setFriendNo(FriendNo);
 			session.delete(friendVO);
-			session.getTransaction();
+			session.getTransaction().commit();
 		} catch (RuntimeException e) {
 			session.getTransaction().rollback();
 			throw e;
@@ -94,7 +94,7 @@ public class FriendDAOHibernate implements Friend_interface {
 			session.beginTransaction();
 			Query query = session.createQuery(GET_ALL_STMT);
 			list = query.list();
-			session.getTransaction();
+			session.getTransaction().commit();
 		} catch (RuntimeException e) {
 			session.getTransaction().rollback();
 			throw e;
@@ -106,12 +106,29 @@ public class FriendDAOHibernate implements Friend_interface {
 	public static void main(String[] args) {
 
 		FriendDAOHibernate dao = new FriendDAOHibernate();
+		// selectAll
+		// List <FriendVO> list = dao.getall();
+		// for(FriendVO aMember: list ){
+		// System.out.println(aMember);
+		// }
 
-		List<FriendVO> list = dao.getall();
+		// select
+//		FriendVO res = dao.findByPrimaryKey(1);
+//		System.out.println(res);
 
-		for (FriendVO aFriend : list) {
-			System.out.println(aFriend);
-		}
+		// update
+//		 FriendVO res = dao.findByPrimaryKey(1);
+//		 res.setFriendId(3);
+//		 dao.update(res);
+//		 System.out.println(res);
+
+		// insert
+//		 FriendVO res = dao.findByPrimaryKey(1);
+//		 dao.insert(res);
+//		 FriendVO res1 = dao.findByPrimaryKey(4);
+//		 System.out.println(res1);
+
+		 //delete
+		 dao.delete(4);
 	}
-
 }
