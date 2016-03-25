@@ -1,6 +1,7 @@
 package _01_Sight.model;
 
 import java.io.Serializable;
+import java.util.Arrays;
 
 public class SightPicVO implements Serializable {
 
@@ -10,7 +11,13 @@ public class SightPicVO implements Serializable {
 	private Integer sightId;	 //景點編號
 	private boolean mainPic;	 //是否為主圖
 	private byte[] pic;  		 //圖檔(型態暫定)
-	
+			
+	@Override
+	public String toString() {
+		return "SightPicVO [sightPicId=" + sightPicId + ", sightId=" + sightId
+				+ ", mainPic=" + mainPic + ", pic=" + Arrays.toString(pic)
+				+ "] \n";
+	}
 	public Integer getSightPicId() {
 		return sightPicId;
 	}
@@ -35,8 +42,5 @@ public class SightPicVO implements Serializable {
 	public void setPic(byte[] pic) {
 		this.pic = pic;
 	}
-	
-	
-	
 
 }

@@ -1,6 +1,10 @@
 package _02_TripAndJournal.model;
 
+
 import java.io.Serializable;
+
+import java.io.Serializable;
+
 
 public class LabelTripAndJournalVO implements Serializable {
 	private static final long serialVersionUID = 1L;

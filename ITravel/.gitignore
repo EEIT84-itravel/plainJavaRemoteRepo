@@ -1,10 +1,6 @@
-<<<<<<< HEAD
 /.project
 /.classpath
-/.settings/
-=======
-/.classpath
-/.project
 /.settings/
 /target/
->>>>>>> branch 'master' of https://github.com/EEIT84-itravel/plainJavaRemoteRepo.git
+/_project
+/_classpath
