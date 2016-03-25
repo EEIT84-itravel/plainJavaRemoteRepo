@@ -6,13 +6,7 @@ public class CollectionVO implements Serializable {
 	private Integer collectionNo;//會員收藏編號
 	private Integer memberId;//會員編號
 	private String typeId;//類型
-	private Integer reference_type;//參照編號
-	@Override
-	public String toString() {
-		return "CollectionVO [collectionNo=" + collectionNo + ", memberId="
-				+ memberId + ", typeId=" + typeId + ", reference_type="
-				+ reference_type + "]";
-	}
+	private Integer referenceType;//參照編號
 	public Integer getCollectionNo() {
 		return collectionNo;
 	}
@@ -31,11 +25,17 @@ public class CollectionVO implements Serializable {
 	public void setTypeId(String typeId) {
 		this.typeId = typeId;
 	}
-	public Integer getReference_type() {
-		return reference_type;
+	public Integer getReferenceType() {
+		return referenceType;
 	}
-	public void setReference_type(Integer reference_type) {
-		this.reference_type = reference_type;
+	public void setReferenceType(Integer referenceType) {
+		this.referenceType = referenceType;
+	}
+	@Override
+	public String toString() {
+		return "CollectionVO [collectionNo=" + collectionNo + ", memberId="
+				+ memberId + ", typeId=" + typeId + ", referenceType="
+				+ referenceType + "]";
 	}
 	
 }

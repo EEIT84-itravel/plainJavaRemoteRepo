@@ -9,25 +9,16 @@ public class MemberVO implements Serializable {
 	private String lastName;// 姓
 	private String firstName;// 名
 	private String nickname;// 暱稱
-	private byte[] password;// 密碼
+	private String password;// 密碼
 	private String email;
 	private java.sql.Date birth;// 生日
-	private String photo;//照片
+	private byte[] photo;//照片
 	private String cellphone;// 電話
 	private Boolean admin;// 管理權限
 	private Boolean del;// 刪除
 	private Integer modifier;// 修改人
-	private java.sql.Time modiftyTime;// 修改時間
-	@Override
-	public String toString() {
-		return "MemberVO [memberId=" + memberId + ", memberAccount="
-				+ memberAccount + ", lastName=" + lastName + ", firstName="
-				+ firstName + ", nickname=" + nickname + ", password="
-				+ Arrays.toString(password) + ", email=" + email + ", birth="
-				+ birth + ", photo=" + photo + ", cellphone=" + cellphone
-				+ ", admin=" + admin + ", del=" + del + ", modifier="
-				+ modifier + ", modiftyTime=" + modiftyTime + "]";
-	}
+	private java.sql.Timestamp modiftyTime;// 修改時間
+	
 	public Integer getMemberId() {
 		return memberId;
 	}
@@ -58,10 +49,10 @@ public class MemberVO implements Serializable {
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
 	}
-	public byte[] getPassword() {
+	public String getPassword() {
 		return password;
 	}
-	public void setPassword(byte[] password) {
+	public void setPassword(String password) {
 		this.password = password;
 	}
 	public String getEmail() {
@@ -76,10 +67,10 @@ public class MemberVO implements Serializable {
 	public void setBirth(java.sql.Date birth) {
 		this.birth = birth;
 	}
-	public String getPhoto() {
+	public byte[] getPhoto() {
 		return photo;
 	}
-	public void setPhoto(String photo) {
+	public void setPhoto(byte[] photo) {
 		this.photo = photo;
 	}
 	public String getCellphone() {
@@ -106,11 +97,22 @@ public class MemberVO implements Serializable {
 	public void setModifier(Integer modifier) {
 		this.modifier = modifier;
 	}
-	public java.sql.Time getModiftyTime() {
+	public java.sql.Timestamp getModiftyTime() {
 		return modiftyTime;
 	}
-	public void setModiftyTime(java.sql.Time modiftyTime) {
+	public void setModiftyTime(java.sql.Timestamp modiftyTime) {
 		this.modiftyTime = modiftyTime;
+	}
+	@Override
+	public String toString() {
+		return "MemberVO [memberId=" + memberId + ", memberAccount="
+				+ memberAccount + ", lastName=" + lastName + ", firstName="
+				+ firstName + ", nickname=" + nickname + ", password="
+				+ password + ", email=" + email + ", birth=" + birth
+				+ ", photo=" + Arrays.toString(photo) + ", cellphone="
+				+ cellphone + ", admin=" + admin + ", del=" + del
+				+ ", modifier=" + modifier + ", modiftyTime=" + modiftyTime
+				+ "]";
 	}
 	
 }

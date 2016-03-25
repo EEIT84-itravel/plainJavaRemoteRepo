@@ -113,7 +113,7 @@ public class CollectionDAOHibernate implements  Collection_interface  {
 			System.out.println(aCollection.getCollectionNo()+",");
 			System.out.println(aCollection.getMemberId()+",");
 			System.out.println(aCollection.getTypeId()+",");
-			System.out.println(aCollection.getReference_type()+",");
+			System.out.println(aCollection.getReferenceType()+",");
 		}
 }
 }

@@ -110,9 +110,7 @@ public class FriendDAOHibernate implements Friend_interface {
 		List<FriendVO> list = dao.getall();
 
 		for (FriendVO aFriend : list) {
-			System.out.println(aFriend.getFriendNo() + ",");
-			System.out.println(aFriend.getMemberId() + ",");
-			System.out.println(aFriend.getFirendId() + ",");
+			System.out.println(aFriend);
 		}
 	}
 
