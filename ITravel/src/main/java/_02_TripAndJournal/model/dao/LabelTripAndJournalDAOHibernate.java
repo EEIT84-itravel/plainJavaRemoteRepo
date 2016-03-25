@@ -16,10 +16,10 @@ public class LabelTripAndJournalDAOHibernate {
 		// System.out.println(res);
 
 		// selectAll
-		// List<LabelTripAndJournalVO> codes = dao.select();
-		// for (LabelTripAndJournalVO detail : codes) {
-		// System.out.println(detail);
-		// }
+		 List<LabelTripAndJournalVO> codes = dao.select();
+		 for (LabelTripAndJournalVO detail : codes) {
+		 System.out.println(detail);
+		 }
 
 		// update
 		// LabelTripAndJournalVO labelTripAndJournalVO = dao.update(7,

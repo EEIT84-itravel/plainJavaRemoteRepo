@@ -1,5 +1,8 @@
 package _02_TripAndJournal.model;
 
+import java.sql.Date;
+import java.sql.Time;
+import java.sql.Timestamp;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -94,20 +97,23 @@ public class MessageDAOHibernate {
 		// List<MessageVO> list = dao.getAll();
 		// System.out.println(list);
 		// 更新
-		// MessageVO messageVo = new MessageVO();
-		// messageVo.setMessageId(1);
-		// messageVo.setMemberId(1);
-		// messageVo.setMessageType("forum_type04");
-		// messageVo.setReferenceNo(4);
-		// messageVo.setContent("javatest");
-		// MessageVO updatetest = dao.update(messageVo);
-		// System.out.println(updatetest);
+//		 MessageVO messageVo = dao.selectmessageId(1);
+//		 messageVo.setMessageId(1);
+//		 messageVo.setMemberId(1);
+//		 messageVo.setMessageType("forum_type03");
+//		 messageVo.setReferenceNo(4);
+//		 messageVo.setContent("javatest11111");
+//		 MessageVO updatetest = dao.update(messageVo);
+//		 System.out.println(updatetest);
 		// 新增
 		// MessageVO messageVo = new MessageVO();
 		// messageVo.setMemberId(1);
 		// messageVo.setMessageType("forum_type04");
 		// messageVo.setReferenceNo(4);
 		// messageVo.setContent("javatest");
+		// java.sql.Timestamp timestamp = new Timestamp( new
+		// java.util.Date().getTime());
+		// messageVo.setUpdateTime(timestamp);
 		// MessageVO inserttest = dao.insert(messageVo);
 		// System.out.println(inserttest);
 		// 刪除

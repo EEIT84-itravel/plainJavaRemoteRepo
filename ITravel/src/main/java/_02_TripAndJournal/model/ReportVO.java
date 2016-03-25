@@ -7,10 +7,10 @@ public class ReportVO implements Serializable { //檢舉
 	private Integer reportId; //檢舉編號
 	private String referenceType; //內容類型
 	private Integer referenceNo; //參照編號
-	private Integer reportor; //檢舉人
+	private Integer reporter; //檢舉人
 	private String reportType; //檢舉類型
 	private String content; //詳細內容
-	private java.sql.Date reportTime; //檢舉時間
+	private java.sql.Timestamp reportTime; //檢舉時間
 	private Integer prosecutor; //被檢舉人
 	private String processStatusId; //處理狀態
 
@@ -18,7 +18,7 @@ public class ReportVO implements Serializable { //檢舉
 	public String toString() {
 		return "ReportVO [reportId=" + reportId + ", referenceType="
 				+ referenceType + ", referenceNo=" + referenceNo
-				+ ", reportor=" + reportor + ", reportType=" + reportType
+				+ ", reportor=" + reporter + ", reportType=" + reportType
 				+ ", content=" + content + ", reportTime=" + reportTime
 				+ ", prosecutor=" + prosecutor + ", processStatusId="
 				+ processStatusId + "]";
@@ -41,11 +41,11 @@ public class ReportVO implements Serializable { //檢舉
 	public void setReferenceNo(Integer referenceNo) {
 		this.referenceNo = referenceNo;
 	}
-	public Integer getReportor() {
-		return reportor;
+	public Integer getReporter() {
+		return reporter;
 	}
-	public void setReportor(Integer reportor) {
-		this.reportor = reportor;
+	public void setReporter(Integer reporter) {
+		this.reporter = reporter;
 	}
 	public String getReportType() {
 		return reportType;
@@ -59,10 +59,10 @@ public class ReportVO implements Serializable { //檢舉
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public java.sql.Date getReportTime() {
+	public java.sql.Timestamp getReportTime() {
 		return reportTime;
 	}
-	public void setReportTime(java.sql.Date reportTime) {
+	public void setReportTime(java.sql.Timestamp reportTime) {
 		this.reportTime = reportTime;
 	}
 	public Integer getProsecutor() {

@@ -3,10 +3,12 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2016/3/18 ?U?? 08:05:02 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-    <class name="model.EventVO" table="event">
+    <class name="_03_Event.model.EventVO" table="event">
        
-        <id name="eventId" column="event_id" >     </id>        
-        <property name="eventPhoto" column="event_photo"/>      
+        <id name="eventId" column="event_id" >  
+          <generator class="identity" />
+        </id>        
+        <property name="eventPhoto" column="event_photo" />      
         <property name="eventTopic" column="event_topic"/>      
         <property name="eventContent" column="event_content" />
         <property name="eventStartDate" column="event_start_date" />       

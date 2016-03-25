@@ -2,7 +2,12 @@ package _01_Sight.model;
 
 import java.io.Serializable;
 import java.sql.Time;
+
 import java.sql.Timestamp;
+
+
+
+
 import _00_Misc.model.CodeVO;
 
 public class SightVO implements Serializable {
@@ -18,7 +23,7 @@ public class SightVO implements Serializable {
 	private Time openTime; 		 //開門時間
 	private Time closeIime;		 //關門時間
 	private Time spendHour;		 //建議停留時間
-	private String layPeriod;	 //建議旅行時段	
+	private String playPeriod;	 //建議旅行時段	
 	private Float score;		 //評分
 	private Float longitude;	 //經度
 	private Float latitude;		 //緯度
@@ -32,6 +37,22 @@ public class SightVO implements Serializable {
 	private Integer modifier;	 //修改人
 	private Timestamp modifyTime;//上次更新時間
 	private boolean del;		 //刪除
+	
+	
+	@Override
+	public String toString() {
+		return "SightVO [sightId=" + sightId + ", sightName=" + sightName
+				+ ", regionId=" + regionId + ", countyId=" + countyId
+				+ ", sightTypeId=" + sightTypeId + ", ticket=" + ticket
+				+ ", openTime=" + openTime + ", closeIime=" + closeIime
+				+ ", spendHour=" + spendHour + ", playPeriod=" + playPeriod
+				+ ", score=" + score + ", longitude=" + longitude
+				+ ", latitude=" + latitude + ", watchNum=" + watchNum
+				+ ", collectNum=" + collectNum + ", phone=" + phone + ", addr="
+				+ addr + ", trans=" + trans + ", creator=" + creator
+				+ ", createTime=" + createTime + ", modifier=" + modifier
+				+ ", modifyTime=" + modifyTime + ", del=" + del + "]\n";
+	}
 	public Integer getSightId() {
 		return sightId;
 	}
@@ -86,11 +107,11 @@ public class SightVO implements Serializable {
 	public void setSpendHour(Time spendHour) {
 		this.spendHour = spendHour;
 	}
-	public String getLayPeriod() {
-		return layPeriod;
+	public String getPlayPeriod() {
+		return playPeriod;
 	}
-	public void setLayPeriod(String layPeriod) {
-		this.layPeriod = layPeriod;
+	public void setPlayPeriod(String layPeriod) {
+		this.playPeriod = layPeriod;
 	}
 	public Float getScore() {
 		return score;
@@ -170,5 +191,6 @@ public class SightVO implements Serializable {
 	public void setDel(boolean del) {
 		this.del = del;
 	}
+
 	
 }

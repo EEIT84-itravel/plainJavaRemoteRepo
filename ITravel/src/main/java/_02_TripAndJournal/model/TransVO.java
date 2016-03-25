@@ -2,7 +2,9 @@ package _02_TripAndJournal.model;
 
 import java.io.Serializable;
 
+
 public class TransVO implements Serializable {
+
 	private static final long serialVersionUID = 1L;
 	// 交通編號
 	private Integer transId;
@@ -30,4 +32,5 @@ public class TransVO implements Serializable {
 		return "TransVO [transId=" + transId + ", transFormId=" + transFormId
 				+ "]";
 	}
+
 }
