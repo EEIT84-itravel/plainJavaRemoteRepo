@@ -95,7 +95,24 @@ public class MemberDAOHibernate implements Member_interface  {
 		
 		MemberDAOHibernate dao = new MemberDAOHibernate();
 		
+		List <MemberVO> list = dao.getall();
 		
+		for(MemberVO aMember: list ){
+			System.out.println(aMember.getMemberId()+",");
+			System.out.println(aMember.getMemberAccount()+",");
+			System.out.println(aMember.getLastName()+",");
+			System.out.println(aMember.getFirstName()+",");
+			System.out.println(aMember.getNickname()+",");
+			System.out.println(aMember.getPassword()+",");
+			System.out.println(aMember.getEmail()+",");
+			System.out.println(aMember.getBirth()+",");
+			System.out.println(aMember.getPhoto()+",");
+			System.out.println(aMember.getCellphone()+",");
+			System.out.println(aMember.getAdmin()+",");
+			System.out.println(aMember.getDel()+",");
+			System.out.println(aMember.getModifier()+",");
+			System.out.println(aMember.getModiftyTime()+",");
+		}
 		
 		
 	}
