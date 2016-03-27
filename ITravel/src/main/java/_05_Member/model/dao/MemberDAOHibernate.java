@@ -3,19 +3,23 @@ package _05_Member.model.dao;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.*;
 
 import _00_Misc.HibernateUtil_H4_Ver1;
 import _05_Member.model.MemberVO;
-import _05_Member.model.Member_interface;
 
-public class MemberDAOHibernate implements Member_interface {
+public class MemberDAOHibernate {
 
 	private static final String GET_ALL_STMT = "from MemberVO order by memberId";
 
 	MemberVO memberVO = null;
 
-	@Override
+
 	public MemberVO findByPrimaryKey(Integer memberId) {
 
 		Session session = HibernateUtil_H4_Ver1.getSessionFactory()
@@ -33,11 +37,9 @@ public class MemberDAOHibernate implements Member_interface {
 		return memberVO;
 	}
 
-	@Override
-	public void insert(MemberVO memberVO) {
+	public MemberVO insert(MemberVO memberVO) {
 		Session session = HibernateUtil_H4_Ver1.getSessionFactory()
 				.getCurrentSession();
-
 		try {
 			session.beginTransaction();
 			session.save(memberVO);
@@ -46,26 +48,28 @@ public class MemberDAOHibernate implements Member_interface {
 			session.getTransaction();
 			throw e;
 		}
+		return memberVO;
 	}
 
-	@Override
-	public void update(MemberVO memberVO) {
+	
+	public MemberVO update(MemberVO memberVO) {
 		Session session = HibernateUtil_H4_Ver1.getSessionFactory()
 				.getCurrentSession();
 
 		try {
 			session.beginTransaction();
-			session.saveOrUpdate(memberVO);
+			session.update(memberVO);
 			session.getTransaction().commit();
 		} catch (RuntimeException e) {
 			session.getTransaction().rollback();
 			throw e;
-
 		}
+		return memberVO;
+		
 	}
 
-	@Override
-	public void delete(Integer memberId) {
+	
+	public boolean delete(Integer memberId) {
 		Session session = HibernateUtil_H4_Ver1.getSessionFactory()
 				.getCurrentSession();
 
@@ -74,14 +78,14 @@ public class MemberDAOHibernate implements Member_interface {
 			MemberVO memberVO = new MemberVO();
 			memberVO.setMemberId(memberId);
 			session.delete(memberVO);
-			session.getTransaction().commit();;
+			session.getTransaction().commit();
+			return true;
 		} catch (RuntimeException e) {
 			session.getTransaction().rollback();
-			throw e;
+			return false;
 		}
 	}
 
-	@Override
 	public List<MemberVO> getall() {
 		List<MemberVO> list = null;
 		Session session = HibernateUtil_H4_Ver1.getSessionFactory()
@@ -99,7 +103,7 @@ public class MemberDAOHibernate implements Member_interface {
 		return list;
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 
 		MemberDAOHibernate dao = new MemberDAOHibernate();
 		// selectAll
@@ -113,7 +117,7 @@ public class MemberDAOHibernate implements Member_interface {
 		// System.out.println(res);
 
 		// update
-		// MemberVO res = dao.findByPrimaryKey(1);
+		// MemberVO res = dao.findByPrimaryKey(6);
 		// res.setMemberAccount("a123456");
 		// dao.update(res);
 		// System.out.println(res);
@@ -122,9 +126,19 @@ public class MemberDAOHibernate implements Member_interface {
 		// MemberVO res = dao.findByPrimaryKey(1);
 		// dao.insert(res);
 		// System.out.println(res);
-
+		
+		//insert photo
+		// File imageFile = new File("src/main/resources/img/candy.jpg");
+		// InputStream is = new FileInputStream(imageFile);
+		// byte[] p = new byte[is.available()];
+		// is.read(p);
+		// is.close();
+		// MemberVO res = dao.findByPrimaryKey(1);
+		// res.setPhoto(p);
+		// System.out.println(dao.insert(res));
+		
 		// delete
-		 //dao.delete(6);
+		//dao.delete(6);
 
 	}
 

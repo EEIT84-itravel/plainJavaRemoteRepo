@@ -2,25 +2,20 @@ package _05_Member.model.dao;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
-import org.hibernate.event.spi.SaveOrUpdateEvent;
 
 import java.util.*;
 
 import _00_Misc.HibernateUtil_H4_Ver1;
-import _05_Member.model.CollectionVO;
-import _05_Member.model.Friend_interface;
-import _05_Member.model.MemberVO;
 import _05_Member.model.TrackVO;
-import _05_Member.model.Track_interface;
 
-public class TrackDAOHibernate implements Track_interface {
+
+public class TrackDAOHibernate {
 
 	private static final String GET_ALL_STMT = "from  TrackVO order by  trackNo";
 
 	TrackVO trackVO = null;
 
-	@Override
-	public void insert(TrackVO trackVO) {
+	public TrackVO insert(TrackVO trackVO) {
 		Session session = HibernateUtil_H4_Ver1.getSessionFactory()
 				.getCurrentSession();
 		try {
@@ -31,25 +26,25 @@ public class TrackDAOHibernate implements Track_interface {
 			session.getTransaction();
 			throw e;
 		}
+		return trackVO;
 	}
 
-	@Override
-	public void update(TrackVO trackVO) {
+	public TrackVO update(TrackVO trackVO) {
 		Session session = HibernateUtil_H4_Ver1.getSessionFactory()
 				.getCurrentSession();
 
 		try {
 			session.beginTransaction();
-			session.saveOrUpdate(trackVO);
+			session.update(trackVO);
 			session.getTransaction().commit();
 		} catch (RuntimeException e) {
 			session.getTransaction().rollback();
 			throw e;
 		}
+		return trackVO;
 	}
 
-	@Override
-	public void delete(Integer trackNo) {
+	public Boolean delete(Integer trackNo) {
 		Session session = HibernateUtil_H4_Ver1.getSessionFactory()
 				.getCurrentSession();
 
@@ -59,13 +54,13 @@ public class TrackDAOHibernate implements Track_interface {
 			tracknVO.setTrackNo(trackNo);
 			session.delete(tracknVO);
 			session.getTransaction().commit();
+			return true;
 		} catch (RuntimeException e) {
 			session.getTransaction().rollback();
-			throw e;
+			return false;
 		}
 	}
 
-	@Override
 	public TrackVO findByPrimaryKey(Integer TrackNo) {
 		Session session = HibernateUtil_H4_Ver1.getSessionFactory()
 				.getCurrentSession();
@@ -80,7 +75,6 @@ public class TrackDAOHibernate implements Track_interface {
 		return trackVO;
 	}
 
-	@Override
 	public List<TrackVO> getall() {
 
 		List<TrackVO> list = null;
@@ -124,7 +118,7 @@ public class TrackDAOHibernate implements Track_interface {
 		// System.out.println(res);
 
 		// delete
-		 dao.delete(6);
+		// dao.delete(6);
 
 	}
 
