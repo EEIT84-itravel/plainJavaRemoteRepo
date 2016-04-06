@@ -21,46 +21,45 @@ public class SightPicDAOHibernate {
 		SightPicDAOHibernate dao = new SightPicDAOHibernate();
 		
 		//測試findByPrimaryKey1
-		SightPicVO select = dao.findByPrimaryKey1(1);
-		System.out.println("findByPrimaryKey1測試" + select);
+//		SightPicVO select = dao.findByPrimaryKey1(1);
+//		System.out.println("findByPrimaryKey1測試" + select);
 		
 		//測試update
-		select.setMainPic(true);
-		dao.update(select);
+//		select.setMainPic(true);
+//		dao.update(select);
 
 		//測試insert
-//		SightPicVO vo = new SightPicVO();
-//		// 讀取要寫入表格的圖片檔		
-//		File imageFile = new File("src/main/resources/img/candy.jpg");	
-//		InputStream is = null;
-//		byte[] p = null;			
-//		try {
-//			is = new FileInputStream(imageFile);
-//			p = new byte[is.available()];			
-//			is.read(p);
-//			vo.setPic(p);
-//			vo.setMainPic(false);
-//			vo.setSightId(1);
-//		} catch (FileNotFoundException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} finally {
-//			try {
-//				is.close();
-//			} catch (IOException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-//		}		
-//		SightPicVO result = dao.insert(vo);
-//		int insert = 0;
-//		if(result!=null) {
-//			insert = 1;
-//		}
-//		System.out.println(insert);
+		SightPicVO vo = new SightPicVO();
+		// 讀取要寫入表格的圖片檔
+		File imageFile = new File("C:/Users/Student/Desktop/imgs/sight43.jpg");
+		InputStream is = null;
+		byte[] p = null;
+		try {
+			is = new FileInputStream(imageFile);
+			p = new byte[is.available()];
+			is.read(p);
+			vo.setPic(p);
+			//vo.setMainPic(false);
+			vo.setMainPic(true);
+			vo.setSightId(43);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				is.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		SightPicVO result = dao.insert(vo);
+		int insert = 0;
+		if (result != null) {
+			insert = 1;
+		}
+		System.out.println(insert);
 
 		//測試selectAll
 //		List<SightPicVO> all = dao.selectAll();
